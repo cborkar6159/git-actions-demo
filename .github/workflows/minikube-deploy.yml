@@ -7,14 +7,12 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Start Minikube
-      uses: medyagh/setup-minikube@latest
 
     - name: Verify cluster
       run: kubectl get pods -A
