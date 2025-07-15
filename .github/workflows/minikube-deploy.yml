@@ -27,5 +27,5 @@ jobs:
     - name: Access service URL
       run: |
         minikube service list
-        minikube service springboot-service --url
+        minikube service tcs-demo-nodeport-service --url
 
