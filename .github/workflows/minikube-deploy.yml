@@ -17,12 +17,6 @@ jobs:
     - name: Verify cluster
       run: kubectl get pods -A
 
-    - name: Build Docker image inside Minikube
-      run: |
-        eval $(minikube -p minikube docker-env)
-        docker build -t cborkar6159/tcs-demo:latest .
-        docker images
-
     - name: Deploy to Minikube
       run: |
         kubectl apply -f k8s/springboot-deployment.yaml
